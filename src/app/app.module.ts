@@ -5,6 +5,8 @@ import { RouterModule } from "@angular/router";
 import { AppComponent } from './app.component';
 import { MainRouter } from "./app.router";
 import { HeaderComponent } from "./components/header/header.component";
+import { AuthService } from "./services/auth/auth.service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -13,10 +15,11 @@ import { HeaderComponent } from "./components/header/header.component";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
 
     RouterModule.forRoot( MainRouter, {onSameUrlNavigation: 'reload'} )
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

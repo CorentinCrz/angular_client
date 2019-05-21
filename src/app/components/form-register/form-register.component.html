@@ -1,4 +1,4 @@
-<form [formGroup]="formData" (submit)="submitForm">
+<form [formGroup]="formData" (submit)="submitForm()">
   
     <label for="last_name">nom</label>
     <input type="text" name="last_name" id=last_name required minlength="2" formControlName="last_name">
@@ -21,11 +21,14 @@
     <label for="country">Ville</label>
     <input type="text" name="country" id=country required minlength="2" formControlName="country">
     
+    <label for="zip_code">Code postal</label>
+    <input type="text" name="zip_code" id=zip_code required minlength="2" formControlName="zip_code">
+    
     <label for="birthdate">date de naissance</label>
     <input type="text" name="birthdate" id=birthdate required minlength="2" formControlName="birthdate">
 
-    <label for="profil">Profil</label>
-    <select name="profil" id="profil" formControlName="profil">
+    <label for="type">type</label>
+    <select name="type" id="type" formControlName="type">
       <option *ngFor="let item of ['merchant', 'neighborhood', 'admin']" [value]="item">{{item}}</option>
     </select>
 
