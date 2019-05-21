@@ -4,10 +4,12 @@ import { RouterModule } from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { MainRouter } from "./app.router";
+import { HeaderComponent } from "./components/header/header.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
