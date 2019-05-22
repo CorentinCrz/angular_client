@@ -1,4 +1,4 @@
-<form [formGroup]="formData" (submit)="submitForm">
+<form [formGroup]="formData" (submit)="submitForm()">
   
     <label for="email">email</label>
     <input type="email" name="email" id=email required minlength="2" formControlName="email">
