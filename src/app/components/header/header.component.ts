@@ -10,9 +10,11 @@ export class HeaderComponent implements OnInit {
   public loggedNav: Array<any>
   public unLoggedNav: Array<any>
   public activeNav: Array<any>
+  public userIsConnected: boolean
   @Input() title: string
 
   constructor() {
+    this.userIsConnected = false
     this.unLoggedNav = [
       {
         value: 'Accueil',
@@ -42,6 +44,13 @@ export class HeaderComponent implements OnInit {
 
   private checkUserToken = () => {
     this.activeNav = window.localStorage.getItem('user-token') ? this.loggedNav : this.unLoggedNav
+    this.userIsConnected = window.localStorage.getItem('user-token') ? true : false
+  }
+
+  public logoutUser = () => {
+    window.localStorage.removeItem('user-token')
+    this.activeNav = this.unLoggedNav
+    this.userIsConnected = false
   }
 
   ngOnInit() {
