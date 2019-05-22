@@ -1,6 +1,6 @@
 <ul *ngIf="categoriesCollection" class="categoryList">
   <li *ngFor="let item of categoriesCollection" [textContent]="item.name"
-  [class]="item.slug" (click)="sortMerchant(item.slug)"></li>
+  [class]="item.slug" (click)="sortMerchant(item)" [ngClass]="{ 'active': item.slug === activeCategory }"></li>
 </ul>
 
 <ul *ngIf="merchantCollection">

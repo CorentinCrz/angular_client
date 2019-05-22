@@ -12,12 +12,14 @@ export class HomePageComponent implements OnInit {
   public merchantCollectionRow: Array<any>
   public categoriesCollectionSlug: Array<string>
   public categoriesCollection: Array<any>
+  public activeCategory: string
 
   constructor(
     private MerchantService: MerchantService
   ) {
     this.categoriesCollectionSlug = []
     this.categoriesCollection = []
+    this.activeCategory = 'all'
   }
 
   private getMerchantList = () => {
@@ -39,12 +41,12 @@ export class HomePageComponent implements OnInit {
     } )
   }
 
-  public sortMerchant = (slug: string) => {
-    console.log({slug})
+  public sortMerchant = (cat: any) => {
     console.log(this.merchantCollection)
+    this.activeCategory = cat.slug
     this.merchantCollection = []
     this.merchantCollectionRow.map( item =>{
-      if (item.category.slug === slug){
+      if (item.category.slug === cat.slug){
         this.merchantCollection.push(item)
       }
     })

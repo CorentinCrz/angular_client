@@ -9,6 +9,10 @@ ul.categoryList li{
     padding: 1rem;
     border: .1rem solid grey
 }
+ul.categoryList li.active{
+    color: white;
+    background: grey;
+}
 ul.categoryList li:not(:last-of-type){
     margin-right: 1rem;
 }
