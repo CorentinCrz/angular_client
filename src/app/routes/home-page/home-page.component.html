@@ -1,3 +1,5 @@
-<p>
-  home-page works!
-</p>
+<ul *ngIf="merchantCollection">
+  <li *ngFor="let item of merchantCollection">
+    <app-merchant-card [merchant]="item"></app-merchant-card>
+  </li>
+</ul>
